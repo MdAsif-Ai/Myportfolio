@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Md Asif | Portfolio</title>
+  <style>
+    /* Include your full CSS here (or link to external styles) */
+    body {
+      background: #121212;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+    }
+
+    .navbar {
+      background: #222;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      color: #4db5ff;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: #4db5ff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.25rem 0.5rem;
+    }
+
+    .nav-links li a:hover, .nav-links li a.active {
+      background: #4db5ff;
+      color: #121212;
+      border-radius: 4px;
+    }
+
+    section {
+      display: none;
+      padding: 2rem;
+      animation: fadeIn 0.4s ease;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .summary-cards {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #222;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 8px #4db5ff33;
+      min-width: 150px;
+    }
+
+    .highlight {
+      color: #4db5ff;
+    }
+
+    .btn {
+      margin-top: 1rem;
+      background: #4db5ff;
+      color: #121212;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #66ccff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: #888;
+    }
+
+    .leetcode-list li, .cert-list li {
+      background: #222;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    .difficulty {
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: #fff;
+    }
+
+    .easy { background: #4caf50; }
+    .medium { background: #ff9800; }
+    .hard { background: #f44336; }
+
+    .progress-bar {
+      background: #222;
+      height: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: #4db5ff;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">MyPortfolio</div>
+    <ul class="nav-links">
+      <li><a href="#" onclick="showPage('home')" class="active">Home</a></li>
+      <li><a href="#" onclick="showPage('leetcode')">LeetCode</a></li>
+      <li><a href="#" onclick="showPage('skills')">Skills</a></li>
+      <li><a href="#" onclick="showPage('certifications')">Certifications</a></li>
+      <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home -->
+  <section id="home" class="active">
+    <h1>Hello, I'm <span class="highlight">Md Asif</span></h1>
+    <p>Software Developer | Problem Solver | Tech Enthusiast</p>
+    <button class="btn" onclick="showPage('leetcode')">View My LeetCode</button>
+    <div class="summary-cards">
+      <div class="card"><h2>150+</h2><p>LeetCode Problems Solved</p></div>
+      <div class="card"><h2>10+</h2><p>Certifications</p></div>
+      <div class="card"><h2>5+</h2><p>Years of Experience</p></div>
+    </div>
+  </section>
+
+  <!-- LeetCode -->
+  <section id="leetcode">
+    <h1>LeetCode Problem Solving</h1>
+    <ul class="leetcode-list">
+      <li>
+        <a href="https://leetcode.com/problems/two-sum/" target="_blank">Two Sum</a>
+        <span class="difficulty easy">Easy</span>
+      </li>
+      <li>
+        <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank">Longest Substring Without Repeating Characters</a>
+        <span class="difficulty medium">Medium</span>
+      </li>
+      <li>
+        <a href="https://leetcode.com/problems/merge-k-sorted-lists/" target="_blank">Merge k Sorted Lists</a>
+        <span class="difficulty hard">Hard</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h1>Skills</h1>
+    <div class="skill">
+      <h3>JavaScript</h3>
+      <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+    </div>
+    <div class="skill">
+      <h3>Python</h3>
+      <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+    </div>
+    <div class="skill">
+      <h3>React</h3>
+      <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <h1>Certifications</h1>
+    <ul class="cert-list">
+      <li>Meta Front-End Developer</li>
+      <li>Google IT Support</li>
+      <li>AWS Certified Cloud Practitioner</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h1>Contact Me</h1>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button class="btn" type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Md Asif. All rights reserved.
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+
+      // Update active link
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
